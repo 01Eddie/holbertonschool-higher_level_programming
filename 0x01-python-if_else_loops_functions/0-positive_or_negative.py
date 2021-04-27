@@ -7,10 +7,10 @@ if the number is 0: is zero
 if the number is less than 0: is negative"""
 
 if (number > 0):
-    print("{} is positive".format(number))
+    print("{:d} is positive".format(number))
 elif (number == 0):
-    print("{} is zero".format(number))
+    print("{:d} is zero".format(number))
 else:
-    print("{} is negative".format(number))
+    print("{:d} is negative".format(number))
 
 
