@@ -3,10 +3,9 @@ import random
 number = random.randint(-10000, 10000)
 
 if number < 0:
-    ldigit = (number % -10)
+    ldigit = -number % 10 * -1
 else:
     ldigit = number % 10
-
 if ldigit == 0:
     print("Last digit of {:d} is {:d} and is 0".format(number, ldigit))
 elif ldigit > 5:
