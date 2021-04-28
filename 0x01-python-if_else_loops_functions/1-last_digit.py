@@ -11,4 +11,4 @@ if ldigit == 0:
 elif ldigit > 5:
     print("Last digit of {:d} is {:d} and is greater than 5".format(number, ldigit))
 else:
-    print("Last digit of {:d} is {:d} and is less than 6 and not 0".format(number, ldigit))
+    print(f"Last digit of {number:d} is {ldigit:d} and is less than 6 and not 0")
