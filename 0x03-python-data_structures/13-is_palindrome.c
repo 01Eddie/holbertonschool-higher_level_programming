@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -13,6 +14,7 @@ listint_t *reverse_list(listint_t **h)
 	tmp1 = *h;
 	tmp2 = NULL;
 
+
 	while (tmp1)
 	{
 		tmp3 = tmp1->next;
@@ -20,9 +22,10 @@ listint_t *reverse_list(listint_t **h)
 		tmp2 = tmp1;
 		tmp1 = tmp3;
 	}
-	*h = tmp2;
-	return (*h);
+	*h = (NULL);
+	return (NULL);
 }
+
 /**
  * is_palindrome - frees a listint_t list
  * @head: pointer to list to be freed
@@ -32,9 +35,9 @@ listint_t *reverse_list(listint_t **h)
 int is_palindrome(listint_t **head)
 {
 	listint_t *tmp1, *tmp2;
-	int nodes, i;
+	int nodes;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (!(*head) || !((*head)->next))
 		return (1);
 	tmp1 = *head;
 	for (nodes = 0; tmp1; nodes++)
