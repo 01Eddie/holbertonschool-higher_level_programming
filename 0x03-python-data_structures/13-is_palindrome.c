@@ -1,6 +1,29 @@
 #include "lists.h"
 
 /**
+ * reverse_list - function name
+ * @h: head of list
+ *
+ * Return: reverse list
+ */
+listint_t *reverse_list(listint_t **h)
+{
+	listint_t *tmp1, *tmp2, *tmp3;
+
+	tmp1 = *h;
+	tmp2 = NULL;
+
+	while (tmp1)
+	{
+		tmp3 = tmp1->next;
+		tmp1->next = tmp2;
+		tmp2 = tmp1;
+		tmp1 = tmp3;
+	}
+	*h = tmp2;
+	return (*h);
+}
+/**
  * is_palindrome - frees a listint_t list
  * @head: pointer to list to be freed
  * Return: 0 or 1
@@ -8,37 +31,27 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow_ptr = *head, *fast_ptr = *head;
-	listint_t *second_half, *prev_of_slow_ptr = *head;
-	listint_t *midnode = NULL;
-	int res = 0;
+	listint_t *tmp1, *tmp2;
+	int nodes, i;
 
-	if (*head != NULL && *head->next != NULL)
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+	tmp1 = *head;
+	for (nodes = 0; tmp1; nodes++)
+		tmp1 = tmp1->next;
+	tmp1 = *head;
+	if (nodes % 2 != 0)
+		tmp1 = tmp1->next;
+
+	tmp2 = reverse_list(&tmp1);
+	tmp1 = *head;
+
+	while (tmp2)
 	{
-		while (fast_ptr != NULL && fast_ptr->next != NULL)
-		{
-			fast_ptr = fast_ptr->next->next;
-			prev_of_slow_ptr = slow_ptr;
-			slow_ptr = slow_ptr->next;
-		}
-		if (fast_ptr != NULL)
-		{
-			midnode = slow_ptr;
-			slow_ptr = slow_ptr->next;
-		}
-		second_half = slow_ptr;
-		prev_of_slow_ptr->next = NULL;
-		reverse(&second_half);
-		res = compareLists(*head, second_half);
-		reverse(&second_half);
-
-		if (midnode != NULL)
-		{
-			prev_of_slow_ptr->next = midnode;
-			midnode->next = second_half;
-		}
-		else
-			prev_of_slow_ptr->next = second_half;
+		if (tmp1->n != tmp2->n)
+			return (0);
+		tmp1 = tmp1->next;
+		tmp2 = tmp2->next;
 	}
-	return (res);
+	return (1);
 }
