@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-
     if roman_string is None or roman_string == 0:
         return 0
     val = {
@@ -13,8 +12,8 @@ def roman_to_int(roman_string):
         'M': 1000
     }
 
-    for v in roman_string:
-            if v not in val.keys():
+    for k in roman_string:
+            if k not in val.keys():
                 return 0
 
     # Inicialize character
