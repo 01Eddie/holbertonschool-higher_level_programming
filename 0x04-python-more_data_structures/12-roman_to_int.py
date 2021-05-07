@@ -11,6 +11,11 @@ def roman_to_int(roman_string):
         'D': 500,
         'M': 1000
     }
+
+    for v in roman_string:
+            if v not in val.keys():
+                return 0
+
     # Inicialize character
     p = 0
     ans = 0
