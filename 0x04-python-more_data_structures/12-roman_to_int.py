@@ -20,7 +20,7 @@ def roman_to_int(roman_string):
     p = 0
     ans = 0
     # traverse all characters
-    n = len(roman_string)
+    n = len(str(roman_string))
 
     for i in range(n-1, -1, -1):
         # if greater of list val
