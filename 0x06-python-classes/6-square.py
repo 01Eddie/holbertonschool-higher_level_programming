@@ -38,12 +38,17 @@ class Square:
         if self.__size == 0 or None:
             print()
         else:
-            set = self.__position[:]
-            x = set[0]
-            y = set[1]
-            print("{}".format('\n' * y), end="")
-            for i in range(0, self.__size):
-                print("{}{}".format(' ' * x, '#' * self.__size))
+            x = self.__position[0]
+            y = self.__position[1]
+            for i in range(y):
+                print("")
+
+            for row in range(0, self.__size):
+                for j in range(x):
+                    print(" ", end="")
+                for col in range(self.size):
+                    print("#", end="")
+                print()
 
     def position(self):
         return self.__position
