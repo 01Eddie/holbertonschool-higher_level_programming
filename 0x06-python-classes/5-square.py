@@ -3,7 +3,9 @@
 
 
 class Square:
+    """Define the variable or attribute in the principal method"""
     def __init__(self, size=0):
+        """The __ define the attribute in private instance"""
         self.__size = size
 
     @property
@@ -32,7 +34,7 @@ class Square:
 
     def my_print(self):
         """public instance method"""
-        if self.__size == 0 or None:
+        if self.__size == 0:
             print()
         else:
             for i in range(0, self.__size):
