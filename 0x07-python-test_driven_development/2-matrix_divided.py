@@ -1,16 +1,21 @@
 #!/usr/bin/python3
+"""def: matrix divided
+    @matrix: 1 param
+    @div: 2 param
+    return new_matrix"""
+
 
 def matrix_divided(matrix, div):
-    # creo una lista vacia que hara a que se importe el resultado
+    """# creo una lista vacia que hara a que se importe el resultado"""
     new_matrix = []
-    # recorro la lista del matrix
+    """# recorro la lista del matrix"""
     for x in matrix:
-        # Crearemos un array vacio donde almacenara los array divididos
+        """# Crearemos un array vacio donde almacenara los array divididos"""
         div_matrix = []
         for y in x:
-            # agregara en el array
+            """# agregara en el array"""
             div_matrix.append(round(y / div, 2))
 
         new_matrix.append(div_matrix)
-    #if new_matrix is list: 
+    """#if new_matrix is list: """
     return new_matrix
