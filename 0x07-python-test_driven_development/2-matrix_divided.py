@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def matrix_divided(matrix, div):
     # creo una lista vacia que hara a que se importe el resultado
     new_matrix = []
