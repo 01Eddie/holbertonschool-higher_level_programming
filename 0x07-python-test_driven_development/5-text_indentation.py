@@ -5,6 +5,8 @@
 
 
 def text_indentation(text):
+    if text is None:
+        raise TypeError("text must be a string")
     """compare if isn't string"""
     if type(text) is not str:
         """message of error"""
