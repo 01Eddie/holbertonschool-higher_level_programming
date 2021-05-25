@@ -24,16 +24,20 @@ def __init__(self, width=0, height=0):
 
 
 class Rectangle:
+    """Define the variable or attribute in the principal method"""
     def __init__(self, width=0, height=0):
+        """The __ define the attribute in private instance"""
         self.__height = height
         self.__width = width
 
     @property
     def width(self):
+        """property getter method"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """property setter method"""
         if value is None:
             raise TypeError("width must be an integer")
 
@@ -49,10 +53,12 @@ class Rectangle:
 
     @property
     def height(self):
+        """property getter method"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """property setter method"""
         if value is None:
             raise TypeError("height must be an integer")
 
