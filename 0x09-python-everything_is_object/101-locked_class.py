@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+defines class LockedClass
+"""
+
+
 class LockedClass:
     """
     slots provide a static structure which prohibits
