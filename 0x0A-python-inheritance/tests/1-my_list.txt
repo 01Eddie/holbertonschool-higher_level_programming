@@ -1,4 +1,13 @@
-Print the list
+==========================
+``MyList`` class
+==========================
+
+Usage class ``MyList``:
+Define class ``MyList`` that print in order list
+--------------------------
+Import:
+    >>>  Mylist = __import__('1-my_list').MyList
+Print the list:
     >>> my_list = MyList()
     >>> my_list.append(1)
     >>> my_list.append(4)
@@ -11,7 +20,7 @@ Print the list
     >>> [1, 2, 3, 4, 5]
     >>> print(my_list)
     >>> [1, 4, 2, 3, 5]
-Print the list negatives
+Print the list negatives:
     >>> list_n = MyList()
     >>> list_n.append(-1)
     >>> list_n.append(-4)
@@ -24,7 +33,7 @@ Print the list negatives
     >>> [-5, -4, -3, -2, -1]
     >>> print(list_n)
     >>> [-1, -4, -2, -3, -5]
-Print the list zeros
+Print the list zeros:
     >>> list_n = MyList()
     >>> list_n.append(0)
     >>> list_n.append(0)
@@ -37,7 +46,7 @@ Print the list zeros
     >>> [0, 0, 0, 0, 0]
     >>> print(list_n)
     >>> [0, 0, 0, 0, 0]
-Print the list with character
+Print the list with character:
     >>> my_list = MyList()
     >>> my_list.append(1)
     >>> my_list.append(4)
@@ -49,11 +58,11 @@ Print the list with character
     Traceback (most recent call last):
         ...
     TypeError: '<' not supported between instances of 'str' and 'int'
-Print empty list
+Print empty list:
     >>> empty_list = MyList()
     >>> empty_list.print_sorted()
     []
-Print tuple
+Print tuple:
     >>> tuple_list.append(1)
     >>> tuple_list.append((2, 3))
     >>> tuple_list.append(3)
@@ -61,7 +70,7 @@ Print tuple
     Traceback (most recent call last):
     	  ...
     TypeError: unorderable types: str() < int()
-Print the list with values of bool
+Print the list with values of bool:
     >>> list_n = MyList()
     >>> list_n.append(1)
     >>> list_n.append(2)
