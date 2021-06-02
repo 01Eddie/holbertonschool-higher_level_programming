@@ -6,7 +6,7 @@ class BaseGeometry:
     """principal function"""
     def __init__(self):
         pass
-        
+
     """public method def area"""
     def area(self):
         """error Exception"""
@@ -19,12 +19,14 @@ class BaseGeometry:
         an integer
         """
         if type(value) is not int:
+            """error TypeError"""
             raise TypeError("{} must be an integer".format(name))
         """
         Value is less or equal to 0: raise a
         ValueError exception with the message <name>
         must be greater than 0
         """
-        if value <= 0:    
+        if value <= 0:
+            """error ValueError"""
             raise ValueError("{} must be greater than 0".format(name))
         return (name, value)
