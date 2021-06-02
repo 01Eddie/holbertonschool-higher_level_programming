@@ -1,0 +1,50 @@
+==========================
+``BaseGeometry`` class
+==========================
+
+Usage class ``BaseGeometry``:
+Define class ``BaseGeometry`` that print in order list
+--------------------------
+Import:
+    >>>  BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Print the list:
+    >>>  bg = BaseGeometry()
+    >>>  bg.integer_validator("my_int", 123)
+
+Print None:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("none", None)
+    Traceback (most recent call last):
+            ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Print List:
+    >>> bg.integer_validator("my_list", [1,1])
+    Traceback (most recent call last):
+            ...
+    TypeError: my_list must be an integer
+
+
+Print Tuple:
+    >>> bg.integer_validator("my_int", (1,2))
+    Traceback (most recent call last):
+            ...
+    TypeError: my_int must be an integer
+
+Print Zero:
+    >>> bg.integer_validator("my_int", 0)
+    Traceback (most recent call last):
+            ...
+    TypeError: my_int must be an integer
+
+Print Negative:
+    >>> bg.integer_validator("my_int", -25)
+    Traceback (most recent call last):
+            ...
+    ValueError: my_int must be greater than 0
+
+Print No Argument:
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+            ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
