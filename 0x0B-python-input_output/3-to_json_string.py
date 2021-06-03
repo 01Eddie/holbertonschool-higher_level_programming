@@ -3,6 +3,7 @@
 
 import json
 
+
 def to_json_string(my_obj):
     """printing initial json"""
     initialization_string = json.dumps(my_obj)
