@@ -5,7 +5,6 @@
 Usage class ``MyList``:
 Define class ``MyList`` that print in order list
 --------------------------
-
 Import:
 
 	>>> MyList = __import__('1-my_list').MyList
@@ -19,3 +18,89 @@ Print the list:
 	>>> my_list.append(2)
 	>>> my_list.append(3)
 	>>> my_list.append(5)
+
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+Print the list negatives:
+
+	>>> my_list = MyList()
+
+	>>> my_list.append(-1)
+	>>> my_list.append(-4)
+	>>> my_list.append(-2)
+	>>> my_list.append(-3)
+	>>> my_list.append(-5)
+
+	>>> print(my_list)
+	[-1, -4, -2, -3, -5]
+
+	>>> my_list.print_sorted()
+	[-5, -4, -3, -2, -1]
+
+	>>> print(my_list)
+	[-1, -4, -2, -3, -5]
+
+Print the list zeros:
+	>>> my_list = MyList()
+
+	>>> my_list.append(0)
+	>>> my_list.append(0)
+	>>> my_list.append(0)
+	>>> my_list.append(0)
+	>>> my_list.append(0)
+
+	>>> print(my_list)
+	[0, 0, 0, 0, 0]
+
+	>>> my_list.print_sorted()
+	[0, 0, 0, 0, 0]
+
+	>>> print(my_list)
+	[0, 0, 0, 0, 0]
+
+Print set:
+
+	>>> my_set = MyList()
+	
+	>>> my_set.append(1)
+	>>> my_set.append(2)
+	>>> my_set.append(3)
+	
+	>>> my_set = set(my_set)
+	>>> my_set.print_sorted()
+	Traceback (most recent call last):
+			...
+	AttributeError: 'set' object has no attribute 'print_sorted'
+
+Print empty list:
+
+	>>> empty_list = MyList()
+
+	>>> empty_list.print_sorted()
+	[]
+
+Print the list with values of bool:
+
+	>>> my_list = MyList()
+
+	>>> my_list.append(1)
+	>>> my_list.append(2)
+	>>> my_list.append(True)
+	>>> my_list.append(3)
+	>>> my_list.append(4)
+
+	>>> print(my_list)
+	[1, 2, True, 3, 4]
+
+	>>> my_list.print_sorted()
+	[1, True, 2, 3, 4]
+
+	>>> print(my_list)
+	[1, 2, True, 3, 4]
