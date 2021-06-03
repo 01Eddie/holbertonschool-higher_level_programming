@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-from os import error
-import sys
 """Using my previous functions"""
+import sys
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
+
 add_item = sys.argv
-"""pop: remove and return item at index (default last)"""
+"""pop: remove and return item at index"""
 add_item.pop(0)
 try:
     """The list must be saved as a JSON
