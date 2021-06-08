@@ -110,12 +110,13 @@ class Rectangle(Base):
             2nd argument should be the width attribute
             3rd argument should be the height attribute
             4th argument should be the x attribute
-            5th argument should be the y attribute 
+            5th argument should be the y attribute
             len(args) puede ser mayor o diferente a 0"""
         if len(args) > 0:
             """ defino el array que va a recorrer """
             array = ["id", "width", "height", "x", "y"]
 
             for i, arg in enumerate(args):
-                """ setattribute hara que tome el objeto de la instancia con el array y hara a que se iguale """
+                """ setattribute hara que tome el objeto de la instancia con el array
+                y hara a que se iguale """
                 setattr(self, array[i], args[i])
