@@ -120,3 +120,7 @@ class Rectangle(Base):
                 """ setattribute hara que tome el objeto de la instancia con el array
                 y hara a que se iguale """
                 setattr(self, array[i], args[i])
+        else:
+            """ **kwargs must be skipped if *args exists and is not empty """
+            for key, value in kwargs.items():
+                setattr(self, key, value)
