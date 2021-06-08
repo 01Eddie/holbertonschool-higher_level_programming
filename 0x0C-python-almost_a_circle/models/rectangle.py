@@ -74,7 +74,7 @@ class Rectangle(Base):
 
     def area(self):
         """ Area of rectangle """
-        return self.width * self.height
+        return self.__width * self.__height
 
     def display(self):
         """ Function of display """
@@ -90,14 +90,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """ it returns [Rectangle] (<id>) <x>/<y> - <width>/<height> """
-        if (self.width is None or
-                self.height is None or self.x is None or
-                self.y is None):
-            self.width = 0
-            self.height = 0
-            self.x = 0
-            self.y = 0
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id,
             self.x,
             self.y,
