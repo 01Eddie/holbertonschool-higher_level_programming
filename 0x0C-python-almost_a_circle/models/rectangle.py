@@ -75,23 +75,47 @@ class Rectangle(Base):
     def area(self):
         """ Area of rectangle """
         return self.width * self.height
-    
+
     def display(self):
         """ Function of display """
         simbol = '#'
-        if self.x == 0 or self.y == 0:
+        if self.x == 0:
             print("")
+        print("{}".format('\n' * self.y), end="")
         for i in range(0, self.height):
+            print("{}".format(' ' * self.x), end="")
             for j in range(0, self.width):
                 print("{}".format(simbol), end="")
-            if i < self.x - 1:
-                print(" ", end="") 
             print("")
+
     def __str__(self):
         """ it returns [Rectangle] (<id>) <x>/<y> - <width>/<height> """
-        if self.width is None or self.height is None or self.x is None or self.y is None:
+        if (self.width is None or
+                self.height is None or self.x is None or
+                self.y is None):
             self.width = 0
             self.height = 0
-            self.x  = 0
-            self.y  = 0
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height) 
+            self.x = 0
+            self.y = 0
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id,
+            self.x,
+            self.y,
+            self.width,
+            self.height
+            )
+
+    def update(self, *args, **kwargs):
+        """ 1st argument should be the id attribute
+            2nd argument should be the width attribute
+            3rd argument should be the height attribute
+            4th argument should be the x attribute
+            5th argument should be the y attribute 
+            len(args) puede ser mayor o diferente a 0"""
+        if len(args) > 0:
+            """ defino el array que va a recorrer """
+            array = ["id", "width", "height", "x", "y"]
+
+            for i, arg in enumerate(args):
+                """ setattribute hara que tome el objeto de la instancia con el array y hara a que se iguale """
+                setattr(self, array[i], args[i])
