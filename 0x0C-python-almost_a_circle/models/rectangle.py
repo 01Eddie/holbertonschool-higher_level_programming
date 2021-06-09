@@ -122,10 +122,10 @@ class Rectangle(Base):
         to_dictionary(self): that returns the
         dictionary representation of a Rectangle """
         rect = {
-            "id": self.id,
-            "width": self.width,
-            "height": self.height,
             "x": self.x,
+            "width": self.width,
+            "id": self.id,
+            "height": self.height,
             "y": self.y
         }
         return rect
