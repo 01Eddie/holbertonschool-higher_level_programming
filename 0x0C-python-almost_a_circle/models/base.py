@@ -96,5 +96,5 @@ class Base:
                 myList = cls.from_json_string(f)
             """i = dict - el recorrido"""
             for i in myList:
-                instanceList.append(cls.create(**dict))
+                instanceList.append(cls.create(**i))
             return instanceList
