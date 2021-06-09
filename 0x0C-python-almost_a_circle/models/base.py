@@ -29,3 +29,21 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return []
         return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def save_to_file(cls, list_objs):
+        """class method def save_to_file(cls, list_objs):
+        that writes the JSON string representation
+        of list_objs to a file: (PREGUNTAR POR LA FUNCION POR Q NO ME SALE)"""
+        filename = cls.__name__ + ".json"
+        represList = []
+
+        if list_objs is not None:
+            for i in list_objs:
+                represList.append(cls.to_dictionary(i))
+        else:
+            """If list_objs is None, save an empty list"""
+            """You must overwrite the file if it already exists"""
+            with open(filename, 'w', encoding="utf-8") as myfn:
+                """You must use the static method to_json_string"""
+                myfn.write(cls.to_json_string(represList))

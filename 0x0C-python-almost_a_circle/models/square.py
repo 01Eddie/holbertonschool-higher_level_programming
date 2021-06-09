@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ class Square that inherits from Rectangle """
-from typing import overload
 from models.rectangle import Rectangle
 
 
@@ -48,3 +47,15 @@ class Square(Rectangle):
             """ **kwargs must be skipped if *args exists and is not empty """
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """adding the public method def to_dictionary
+        (self): that returns the dictionary
+        representation of a Square:"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
