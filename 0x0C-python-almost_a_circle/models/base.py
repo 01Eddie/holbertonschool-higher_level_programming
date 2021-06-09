@@ -40,7 +40,7 @@ class Base:
 
         if list_objs is not None:
                 list_objs = [i.to_dictionary() for i in list_objs]
-                
+
         """If list_objs is None, save an empty list"""
         """You must overwrite the file if it already exists"""
         with open(filename, 'w', encoding="utf-8") as myfn:
