@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Class Base: """
 import json
+from os import path
 
 
 class Base:
@@ -79,3 +80,23 @@ class Base:
             dummyNew = cls(1, 0)
         dummyNew.update(**dictionary)
         return dummyNew
+
+    @classmethod
+    def load_from_file(cls):
+        """the class method def load_from_file(cls):
+        that returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        instanceList = []
+        """ If the file doesn’t exist, return an empty list """
+        if path.exists(filename) is None or path.exists(filename) is False:
+            return []
+        else:
+            """ Otherwise, return a list of instances - the type of these instances
+            depends on cls (current class using this method) """
+            with open(filename, 'r', encoding="utf-8") as myfn:
+                f = myfn.read()
+                myList = cls.from_json_string(f)
+            """i = dict - el recorrido"""
+            for i in myList:
+                instanceList.append(cls.create(**dict))
+            return instanceList
