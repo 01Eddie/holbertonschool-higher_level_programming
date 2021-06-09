@@ -50,7 +50,32 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        if json_string is None:
+        """the static method def from_json_string
+        (json_string): that returns the list of the
+        JSON string representation json_string:"""
+        if json_string is None or len(json_string) == 0:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """the class method def create(cls, **dictionary):
+        that returns an instance with all attributes already set:
+            - **dictionary can be thought of as double pointer to a dictionary
+            - To use the update method to assign all
+        attributes, you must create a “dummy” instance before:
+                - Create a Rectangle
+                or Square instance with
+                “dummy” mandatory attributes (width, height, size, etc.)
+                - Call update instance method
+                to this “dummy” instance to apply
+                your real values
+            - You must use the method def update(self, *args, **kwargs)
+            - **dictionary must be used as **kwargs of the method update"""
+        if cls.__name__ == 'Rectangle':
+            dummyNew = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            dummyNew = cls(1, 0)
+        dummyNew.update(**dictionary)
+        return dummyNew
