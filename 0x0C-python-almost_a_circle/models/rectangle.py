@@ -80,14 +80,12 @@ class Rectangle(Base):
     def display(self):
         """ Function of display """
         simbol = '#'
-        if self.x == 0:
-            print("")
-        print("{}".format(('\n' * self.y)), end="")
-        for i in range(0, self.height):
-            print("{}".format(' ' * self.x), end="")
-            for j in range(0, self.width):
-                print("{}".format(simbol), end="")
-            print("")
+
+        for row in range(self.y):
+            print()
+
+        for row in range(self.height):
+            print("{}{}".format(' ' * self.x, simbol * self.width))
 
     def __str__(self):
         """It returns [Rectangle] (<id>) <x>/<y> - <width>/<height> """
