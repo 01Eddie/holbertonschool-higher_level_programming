@@ -47,3 +47,10 @@ class Base:
             with open(filename, 'w', encoding="utf-8") as myfn:
                 """You must use the static method to_json_string"""
                 myfn.write(cls.to_json_string(represList))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
