@@ -4,6 +4,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """Principal Function"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Constructor """
         self.width = width
@@ -89,7 +90,7 @@ class Rectangle(Base):
             print("")
 
     def __str__(self):
-        """ it returns [Rectangle] (<id>) <x>/<y> - <width>/<height> """
+        """It returns [Rectangle] (<id>) <x>/<y> - <width>/<height> """
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id,
             self.x,
@@ -119,7 +120,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """ adding the public method def
+        """adding the public method def
         to_dictionary(self): that returns the
         dictionary representation of a Rectangle """
         rect = {
