@@ -37,16 +37,15 @@ class Base:
         that writes the JSON string representation
         of list_objs to a file:"""
         filename = cls.__name__ + ".json"
-        represList = []
 
         if list_objs is not None:
-            for i in list_objs:
-                represList.append(cls.to_dictionary(i))
+                list_objs = [i.to_dictionary() for i in list_objs]
+                
         """If list_objs is None, save an empty list"""
         """You must overwrite the file if it already exists"""
         with open(filename, 'w', encoding="utf-8") as myfn:
             """You must use the static method to_json_string"""
-            myfn.write(cls.to_json_string(represList))
+            myfn.write(cls.to_json_string(list_objs))
 
     @staticmethod
     def from_json_string(json_string):
