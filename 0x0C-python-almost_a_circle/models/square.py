@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ class Square that inherits from Rectangle """
+from typing import overload
 from models.rectangle import Rectangle
 
 
@@ -17,4 +18,33 @@ class Square(Rectangle):
         """overloading __str__ method should return
         [Square] (<id>) <x>/<y> - <size> - in our
         case, width or height"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width)
+
+    @property
+    def size(self):
+        """ The setter should assign (in this order)
+        the width and the height - with the same value """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """setter should have the same value
+        validation as the Rectangle for width and height"""
+        self.width = value
+        self.height = value
+        return value
+
+    def update(self, *args, **kwargs):
+        if len(args) > 0:
+            """ defino el array que va a recorrer """
+            array = ["id", "size", "x", "y"]
+
+            for i, arg in enumerate(args):
+                """ setattribute hara que tome el objeto de la instancia con el array
+                y hara a que se iguale """
+                setattr(self, array[i], args[i])
+        else:
+            """ **kwargs must be skipped if *args exists and is not empty """
+            for key, value in kwargs.items():
+                setattr(self, key, value)
