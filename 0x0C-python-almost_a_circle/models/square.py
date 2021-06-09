@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" class Square that inherits from Rectangle """
+"""Class Square that inherits from Rectangle """
 from models.rectangle import Rectangle
 
 
@@ -22,7 +22,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """ The setter should assign (in this order)
+        """The setter should assign (in this order)
         the width and the height - with the same value """
         return self.width
 
@@ -35,6 +35,7 @@ class Square(Rectangle):
         return value
 
     def update(self, *args, **kwargs):
+        """Function: Update"""
         if len(args) > 0:
             """ defino el array que va a recorrer """
             array = ["id", "size", "x", "y"]
