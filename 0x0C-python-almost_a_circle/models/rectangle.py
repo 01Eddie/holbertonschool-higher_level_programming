@@ -81,7 +81,7 @@ class Rectangle(Base):
         simbol = '#'
         if self.x == 0:
             print("")
-        print("{}".format('\n' * self.y), end="")
+        print("{}".format(('\n' * self.y)), end="")
         for i in range(0, self.height):
             print("{}".format(' ' * self.x), end="")
             for j in range(0, self.width):
@@ -117,3 +117,16 @@ class Rectangle(Base):
             """ **kwargs must be skipped if *args exists and is not empty """
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ adding the public method def
+        to_dictionary(self): that returns the
+        dictionary representation of a Rectangle """
+        rect = {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+        return rect
