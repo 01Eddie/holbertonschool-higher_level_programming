@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const { argv} = require('process');
+const { argv } = require('process');
 
 /**
  * If no arguments are passed to the script, print “No argument”

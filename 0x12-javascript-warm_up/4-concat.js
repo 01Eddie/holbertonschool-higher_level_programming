@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const { argv} = require('process');
+const { argv } = require('process');
 
 /**
  * If no arguments are passed to the script, print “No argument”
@@ -7,7 +7,7 @@ const { argv} = require('process');
  * Otherwise, print “Arguments found” */
 
 if (argv[2]) {
-    console.log(argv[2] + ' is ' + argv[3]);
+  console.log(argv[2] + ' is ' + argv[3]);
 } else if (argv[1]) {
   console.log(argv[2] + ' is ' + argv[3]);
 }
