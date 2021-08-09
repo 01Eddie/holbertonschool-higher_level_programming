@@ -21,7 +21,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     cursor.execute("SELECT * FROM states\
-                    WHERE SUBSTRING(name,1,1) = 'N' ORDER BY id ASC")
+                    WHERE SUBSTRING(name,1,1) LIKE 'N%' ORDER BY id ASC")
 
     data = cursor.fetchall()
 
