@@ -2,8 +2,7 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.schema import ForeignKey
-
-Base = declarative_base()
+from model_state import Base, State
 
 
 class City(Base):
