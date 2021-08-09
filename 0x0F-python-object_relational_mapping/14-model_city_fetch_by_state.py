@@ -31,7 +31,7 @@ Your code should not be executed when imported """
 import sys
 from model_state import Base, State
 from model_city import City
-
+import sqlalchemy
 from sqlalchemy.orm import session, sessionmaker
 from sqlalchemy import (create_engine)
 
