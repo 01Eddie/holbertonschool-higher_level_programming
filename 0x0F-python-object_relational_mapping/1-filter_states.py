@@ -5,7 +5,6 @@ from the database hbtn_0e_0_usa"""
 import MySQLdb
 import sys
 
-
 """ Your script should take 3 arguments: mysql username, mysql password and
 database name (no argument validation needed)
 You must use the module MySQLdb (import MySQLdb)
@@ -21,12 +20,13 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     cursor.execute("SELECT * FROM states\
-                    WHERE name LIKE 'N%' ORDER BY id ASC")
+                    WHERE SUBSTRING(name,1,1) = 'N' ORDER BY id ASC")
 
     data = cursor.fetchall()
 
     for state in data:
-        print(state)
+        if state[1][0] == 'N':
+            print(state)
 
     cursor.close()
     db.close()
