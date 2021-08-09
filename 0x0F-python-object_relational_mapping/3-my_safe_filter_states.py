@@ -5,8 +5,7 @@ import MySQLdb
 import sys
 
 """Your script should take 4 arguments: mysql username, mysql password,
-database
-name and state name searched (safe from MySQL injection)
+database name and state name searched (safe from MySQL injection)
 You must use the module MySQLdb (import MySQLdb)
 Your script should connect to a MySQL server running on localhost at port 3306
 Results must be sorted in ascending order by states.id
