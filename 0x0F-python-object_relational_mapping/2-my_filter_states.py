@@ -16,8 +16,9 @@ if __name__ == "__main__":
 
     data = cursor.fetchall()
 
-    for state in data:
-        print(state)
+    for state1 in data:
+        if state1[1] == state:
+            print(state1)
 
     cursor.close()
     db.close()
