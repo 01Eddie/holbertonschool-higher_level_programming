@@ -4,10 +4,11 @@
 
 if __name__ == "__main__":
     """ Python script that fetches """
-    import urllib.request
-    req = urllib.request.Request('https://intranet.hbtn.io/status')
-    with urllib.request.urlopen(req) as response:
+    import urllib.request as request
+    req = request.Request('https://intranet.hbtn.io/status')
+    with request.urlopen(req) as response:
         html = response.read()
         print('Body response:')
-        print('\t- type: {}\n\t- content: {}\n\t- utf content: {}'.
-              format(type(html), html, html.decode('utf-8')))
+        print('\t- type: {}'.format(type(html)))
+        print('\t- content: {}'.format(html))
+        print('\t- utf content: {}'.format(html.decode('utf-8')))
