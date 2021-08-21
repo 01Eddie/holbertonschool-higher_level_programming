@@ -7,5 +7,5 @@ if __name__ == "__main__":
     from sys import argv
     req = request.Request(argv[1])
     with request.urlopen(req) as response:
-        html = response.info()
-        print("{}".format(html.get("X-Request-Id")))
+        req_id = response.info()
+        print("{}".format(req_id.get("X-Request-Id")))
