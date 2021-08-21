@@ -6,7 +6,7 @@ Python script that fetches
 
 
 if __name__ == "__main__":
-    import urllib.request as request
+    from urllib import request
     with request.urlopen('https://intranet.hbtn.io/status') as response:
         html = response.read()
         print('Body response:')
