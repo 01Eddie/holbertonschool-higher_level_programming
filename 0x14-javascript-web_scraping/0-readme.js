@@ -9,7 +9,6 @@ const fs = require('fs');
 * The content of the file must be read in utf-8
  * If an error occurred during the reading, print the error object
  */
+// log(err ? err : data) == es lo mismo solo que genera error en semistandard Unnecessary use of conditional expression for default assignment.
 const ar = argv[2];
-fs.readFile(ar, 'utf8', (err, data) => {
-  console.log(err || data); // log(err ? err : data) == es lo mismo solo que genera error en semistandard Unnecessary use of conditional expression for default assignment.
-});
+fs.readFile(ar, 'utf8', (err, data) => console.log(err || data));
