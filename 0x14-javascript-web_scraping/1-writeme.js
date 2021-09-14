@@ -1,7 +1,7 @@
 #!/usr/bin/node
-
-const { argv } = require('process');
 const fs = require('fs');
+const { argv } = require('process');
+
 /**
  * Write a script that writes a string to a file.
  *
