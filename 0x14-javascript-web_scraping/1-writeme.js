@@ -12,6 +12,6 @@ const { argv } = require('process');
  */
 const arFile = argv[2];
 const arText = argv[3];
-fs.writeFile(arFile, arText, 'utf-8', (err) => {
+fs.writeFile(arFile, arText, 'utf8', (err) => {
     if (err) console.log(err);
 });
