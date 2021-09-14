@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
 const { argv } = require('process');
-const fs = require('fs/promises');
 const request = require('request');
+const fs = require('fs/promises');
 
 /**
  * Write a script that gets the contents of a webpage and stores it in a file.
@@ -17,5 +17,5 @@ const arLink = argv[2];
 const arText = argv[3];
 
 request(arLink, (err, res, body) => {
-  !err ? fs.writeFile(arText, body, 'utf8') : console.log(err);
+  !err ? fs.writeFile(arText, body, 'utf8', (_err) => {}) : console.log(err);
 });
