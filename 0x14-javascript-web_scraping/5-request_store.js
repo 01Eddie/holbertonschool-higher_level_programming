@@ -17,5 +17,5 @@ const arLink = argv[2];
 const arText = argv[3];
 
 request(arLink, (err, res, body) => {
-  (err) ? console.log(err) : fs.writeFile(arText, body, 'utf8');
+  !err ? fs.writeFile(arText, body, 'utf8') : console.log(err);
 });
