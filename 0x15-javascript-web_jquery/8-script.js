@@ -1,5 +1,8 @@
-$.get('https://swapi-api.hbtn.io/api/people/5/?format=json', function (data, status) {
+$.get('https://swapi-api.hbtn.io/api/films/?format=json', function (data, status) {
   if (status === 'success') {
-    $('#character').html(data.results);
+    const titleMovie = data.results;
+    titleMovie.forEach(movie => {
+      $('#list_movies').append(`<li>${movie.title}</li>`);
+    });
   }
 });
